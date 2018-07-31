@@ -13,9 +13,17 @@
   </div>
 
   <div class="show-links">
-    <%= link_to "Add a new ingredient", new_cocktail_dose_path(@cocktail) %>
+    <a href="" data-toggle="modal" data-target=".ingredients-modal">Add a new ingredient</a>
     <br>
     <br>
     <%= link_to "Back to list", cocktails_path %>
+  </div>
+</div>
+
+<div class="modal fade centered-modal ingredients-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <%= render 'doses/new', dose:Dose.new, cocktail:Cocktail.find(params[:id]) %>
+    </div>
   </div>
 </div>
