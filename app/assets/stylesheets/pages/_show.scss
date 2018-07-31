@@ -1,0 +1,24 @@
+.show-cocktail {
+  height: calc(100vh - 70px);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.show-cocktail h1 {
+  margin-top: 0;
+  color: white;
+}
+
+.show-links {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.show-links a {
+  color: white;
+}
