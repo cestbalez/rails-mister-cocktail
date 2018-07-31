@@ -1,0 +1,10 @@
+<div class="form">
+  <%= simple_form_for [cocktail, review] do |f| %>
+    <div class="form-group">
+      <%= f.label :content %>
+      <%= f.text_field :content, class: "form-control" %>
+    </div>
+      <%= f.text_field :rating, class: "form-control" %>
+      <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+</div>

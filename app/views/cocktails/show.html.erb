@@ -18,12 +18,35 @@
     <br>
     <%= link_to "Back to list", cocktails_path %>
   </div>
+
+  <div class="show-create-review">
+    <a href="" data-toggle="modal" data-target=".review-modal">Add a new review</a>
+  </div>
 </div>
+
+<h1 class="show-reviews-header text-center">Reviews</h1>
+
+<div class="show-description">
+        <% @cocktail.reviews.each do |review| %>
+          <p><%= review.content %> <%= review.rating %></p>
+        <% end %>
+      </div>
+  </div>
+
+
 
 <div class="modal fade centered-modal ingredients-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <%= render 'doses/new', dose:Dose.new, cocktail:Cocktail.find(params[:id]) %>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade centered-modal review-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <%= render 'reviews/new', review:Review.new, cocktail:Cocktail.find(params[:id]) %>
     </div>
   </div>
 </div>
