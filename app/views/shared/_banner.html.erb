@@ -4,6 +4,11 @@
     <p>
       <span id="banner-typed-text"></span>
     </p>
-    <!-- <a class="btn btn-primary btn-lg">Add your cocktail</a> -->
+    <div class="form-group banner-search">
+    <%= simple_form_for(cocktails_path) do |f| %>
+      <%= f.text_field :cocktail, class: "form-control", value: "Search for a cocktail..." %>
+      <%= f.submit 'Search', class: 'hidden' %>
+    <% end %>
+  </div>
   </div>
 </div>
