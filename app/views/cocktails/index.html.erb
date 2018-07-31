@@ -1,3 +1,12 @@
-<%= link_to "Add a new cocktail", new_cocktail_path %>
+<%= render 'shared/banner' %>
+<!-- <h1 class="text-center">Available cocktails</h1> -->
 
-<%= @cocktails %>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+        <%= render "cocktails/card", cocktail:cocktail %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
