@@ -5,9 +5,12 @@
       <span id="banner-typed-text"></span>
     </p>
     <div class="form-group banner-search">
-    <%= simple_form_for(cocktails_path) do |f| %>
-      <%= f.text_field :cocktail, class: "form-control", value: "Search for a cocktail..." %>
-      <%= f.submit 'Search', class: 'hidden' %>
+    <%= form_tag(cocktails_path, method: :get) do |f| %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search for a cocktail..."
+      %>
     <% end %>
   </div>
   </div>
