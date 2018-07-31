@@ -12,5 +12,8 @@ console.log('Hello World from Webpacker')
 import 'bootstrap';
 import { loadDynamicBannerText } from "../components/banner";
 import '../components/select2';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+
 
 loadDynamicBannerText();
